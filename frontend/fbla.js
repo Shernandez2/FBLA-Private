@@ -1,5 +1,4 @@
-
-
+import { Hono } from '/backend/node_modules/hono/dist/hono.js';
 //global element
 const pageWrapper = document.getElementById("page-wrapper");
 
@@ -65,7 +64,7 @@ class Job {
   }
 }
 
-jobBenefits = [
+const jobBenefits = [
   "401(k)",
   "401(k) matching",
   "Dental Insurance",
@@ -305,7 +304,7 @@ if (document.body.contains(menuContent)) {
 // log in and sign up logic
 
 //check for local storage
-function logIn() {
+export function logIn() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -361,7 +360,7 @@ function logIn() {
 }
 
 //set local storage
-function createAccount() {
+export function createAccount() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -508,7 +507,7 @@ if (document.body.contains(signUpPassInput)) {
 }
 
 //switch the page to the sign up page
-function switchToSignUp() {
+export function switchToSignUp() {
   accountFormSubheader.innerHTML = "Create An Account";
   logInForm.style.display = "none";
   signUpForm.style.display = "block";
@@ -519,7 +518,7 @@ function switchToSignUp() {
 }
 
 //switch the page to the log in page
-function switchToLogIn() {
+export function switchToLogIn() {
   accountFormSubheader.innerHTML = "Log Into Your Account";
   signUpForm.style.display = "none";
   logInForm.style.display = "block";
@@ -547,11 +546,11 @@ function showSignupPassword() {
 }
 
 //log out functions, changes logged in state
-function logOut() {
+export function logOut() {
   modal.showModal();
 }
 
-function confirmLogOut() {
+export function confirmLogOut() {
   document.location.href = "index.html";
   loggedIn = false;
   localStorage.setItem("loggedIn", loggedIn);
@@ -591,7 +590,7 @@ if (document.body.contains(modal)) {
 
 //functions for submitting the applications
 //these functions store the application info in local storage for later access
-function confirmSubmit() {
+export function confirmSubmit() {
   //variables to capture the date the application was submitted
   const date = new Date();
   const year = date.getFullYear();
@@ -640,7 +639,7 @@ function confirmSubmit() {
 
 }
 //format of the application
-function phoneFormat(input) {
+export function phoneFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 10); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 0) {
@@ -655,7 +654,7 @@ function phoneFormat(input) {
   return input;
 }
 
-function socialSecurityFormat(input) {
+export function socialSecurityFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 9); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 3) {
@@ -668,7 +667,7 @@ function socialSecurityFormat(input) {
 }
 
 //these funcitons check to make sure all of the REQUIRED fields are filled out
-function submitApplication() {
+export function submitApplication() {
   const emailPattern = /^[a-zA-Z0-9._-]{1,16}@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
   const phoneNumberPattern = /\(\d{3}\) \d{3}-\d{4}/g;
   const socialSecurityPattern = /\d{3}-\d{2}-\d{4}/g;

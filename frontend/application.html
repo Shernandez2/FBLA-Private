@@ -133,7 +133,7 @@
                 id="socialSecurity-input"
                 type="text"
                 placeholder="Social Security"
-                onInput="this.value = socialSecurityFormat(this.value)"
+                onInput=""
                 required
               />
             </div>
@@ -227,8 +227,9 @@
             <button
               type="button"
               class="submit application-submit"
-              onclick="submitApplication()"
-            >
+              id="submit-application-button-sigma"
+              onclick="submitApplication()">
+            
               Submit
             </button>
           </div>
@@ -263,5 +264,6 @@
     </div>
 
     <script src="fbla.js"></script>
+    <script type="module" src="buttons.js"></script>
   </body>
 </html>
