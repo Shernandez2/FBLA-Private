@@ -1,5 +1,3 @@
-import { Hono } from '/backend/node_modules/hono/dist/hono.js';
-//global element
 const pageWrapper = document.getElementById("page-wrapper");
 
 //nav elements
@@ -64,7 +62,7 @@ class Job {
   }
 }
 
-const jobBenefits = [
+jobBenefits = [
   "401(k)",
   "401(k) matching",
   "Dental Insurance",
@@ -170,9 +168,8 @@ const jobList = [
 
 
 
-
-
   
+
 
     
  
@@ -286,6 +283,75 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+
+// fetch('https://api.santiagohe75.workers.dev/getJobs')
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data); // Do something with the data
+//   })
+//   .catch(error => {
+//     console.error('There was a problem with the fetch operation:', error);
+//   });
+
+axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+  const data = JSON.parse(response.data);
+  console.log(data.results);
+}).catch((error) => {
+  console.log(error); 
+});
+
+
+
+// if (document.contains(applicationInfo)){
+//   let storedSpots = Object.values(jobList);
+//   let filteredSpots = storedSpots.filter(
+//     (value) => value.id == localStorage.getItem("targetJob")
+//   );
+//   getData(`${filteredSpots[0].jobTitle}`)
+//   console.log(filteredSpots)
+// }
+// async function updateSpots(jobId) {
+  
+//     const response = await axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${jobId}`);
+//     console.log('Response:', response.data);
+// }
+// const updateSpots = () =>{
+//   axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${targetJob}`)
+// }
+
+
+// // Function to handle button click (or other event)
+// function onUpdateSpotsButtonClick() {
+//   const jobId = 1; // Replace with the actual job ID
+//   updateSpots(jobId);
+// }
+// if (document.contains(applicationInfo)){
+//     let storedSpots = Object.values(jobList);
+//     let filteredSpots = storedSpots.filter(
+//       (value) => value.id == localStorage.getItem("targetJob")
+//     );
+//     onUpdateSpotsButtonClick(`${filteredSpots[0].jobTitle}`)
+//     console.log(filteredSpots)
+//   }
+// Axios.get('https://api.example.com/data')
+//     .then(response => {
+//         console.log(response.data);
+//     })
+//     .catch(error => {
+//         console.error('There was an error making the GET request!', error);
+//     });
+
+// const getData = () => {
+//   axios.get('https://api.santiagohe75.workers.dev/jobList').then(response => {
+//     console.log(response);
+//   })
+// }
+
 //functionality for nav for smaller media queries
 if (document.body.contains(menuContent)) {
   menu.addEventListener("click", function () {
@@ -304,7 +370,7 @@ if (document.body.contains(menuContent)) {
 // log in and sign up logic
 
 //check for local storage
-export function logIn() {
+function logIn() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -360,7 +426,7 @@ export function logIn() {
 }
 
 //set local storage
-export function createAccount() {
+function createAccount() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -507,7 +573,7 @@ if (document.body.contains(signUpPassInput)) {
 }
 
 //switch the page to the sign up page
-export function switchToSignUp() {
+function switchToSignUp() {
   accountFormSubheader.innerHTML = "Create An Account";
   logInForm.style.display = "none";
   signUpForm.style.display = "block";
@@ -518,7 +584,7 @@ export function switchToSignUp() {
 }
 
 //switch the page to the log in page
-export function switchToLogIn() {
+function switchToLogIn() {
   accountFormSubheader.innerHTML = "Log Into Your Account";
   signUpForm.style.display = "none";
   logInForm.style.display = "block";
@@ -546,11 +612,11 @@ function showSignupPassword() {
 }
 
 //log out functions, changes logged in state
-export function logOut() {
+function logOut() {
   modal.showModal();
 }
 
-export function confirmLogOut() {
+function confirmLogOut() {
   document.location.href = "index.html";
   loggedIn = false;
   localStorage.setItem("loggedIn", loggedIn);
@@ -590,7 +656,7 @@ if (document.body.contains(modal)) {
 
 //functions for submitting the applications
 //these functions store the application info in local storage for later access
-export function confirmSubmit() {
+function confirmSubmit() {
   //variables to capture the date the application was submitted
   const date = new Date();
   const year = date.getFullYear();
@@ -639,7 +705,7 @@ export function confirmSubmit() {
 
 }
 //format of the application
-export function phoneFormat(input) {
+function phoneFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 10); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 0) {
@@ -654,7 +720,7 @@ export function phoneFormat(input) {
   return input;
 }
 
-export function socialSecurityFormat(input) {
+function socialSecurityFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 9); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 3) {
@@ -667,7 +733,7 @@ export function socialSecurityFormat(input) {
 }
 
 //these funcitons check to make sure all of the REQUIRED fields are filled out
-export function submitApplication() {
+function submitApplication() {
   const emailPattern = /^[a-zA-Z0-9._-]{1,16}@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
   const phoneNumberPattern = /\(\d{3}\) \d{3}-\d{4}/g;
   const socialSecurityPattern = /\d{3}-\d{2}-\d{4}/g;
@@ -789,8 +855,6 @@ if (document.body.contains(applicationInfo)) {
     }
   }
 }
-
-
 
 
 
