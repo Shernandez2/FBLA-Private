@@ -1129,55 +1129,6 @@ if (document.body.contains(jobOpenings)) {
   });
 }
 
-axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
-  const data = JSON.parse(response.data);
-  const spotObject = data.results;
-  // console.log(spotObject);
-  // console.log(data.results);
-  //  console.log(data.results[0].id);
- spotObject.forEach((spot) => {
-   let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
-   if(matchingJob){
-    matchingJob.spots = spot.spots;
-  }
-
-
-
-})
-function checkSpots(targetJob) {
-  const job = jobList.find((job) => job.targetJob === targetJob);
-  return job ? job.spots : 0;
-}
-console.log(checkSpots("3"));
-
-// console.log(jobList[0].spots);
-console.log(jobList);
-
-
-
-
-
-let jobDivs = document.querySelectorAll(".job-container");
-jobDivs.forEach((div) => {
-div.addEventListener("click", (e) => {
-
-  let applyButton = document.querySelector(".apply");
-  applyButton.addEventListener("click", (event) => {
-  let storedSpots = Object.values(jobList);
-  let filteredSpots = storedSpots.filter(
-    (value) => value.id == localStorage.getItem("targetJob")
-  )
-    if(filteredSpots[0].spots == 0){
-      alert("You have no spots left for this job");
-      document.location.href = "job-list.html";
-    }
-})
-
-})
-
-// removeSpotByJobId("softwareEnginner");
-}
-)})
 
 
 const headerBackgrounds = document.querySelectorAll(".background");
@@ -1243,3 +1194,54 @@ if (document.body.contains(homeLoginHeader)) {
 // if (document.body.contains(profilePictureDisplay)) {
 
 // }
+axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+  const data = JSON.parse(response.data);
+  const spotObject = data.results;
+  // console.log(spotObject);
+  // console.log(data.results);
+  //  console.log(data.results[0].id);
+ spotObject.forEach((spot) => {
+   let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+   if(matchingJob){
+    matchingJob.spots = spot.spots;
+  }
+
+
+
+})
+function checkSpots(targetJob) {
+  const job = jobList.find((job) => job.targetJob === targetJob);
+  return job ? job.spots : 0;
+}
+console.log(checkSpots("3"));
+
+// console.log(jobList[0].spots);
+console.log(jobList);
+
+
+
+
+
+let jobDivs = document.querySelectorAll(".job-container");
+jobDivs.forEach((div) => {
+div.addEventListener("click", (e) => {
+
+  let applyButton = document.querySelector(".apply");
+  applyButton.addEventListener("click", (event) => {
+  let storedSpots = Object.values(jobList);
+  let filteredSpots = storedSpots.filter(
+    (value) => value.id == localStorage.getItem("targetJob")
+  )
+    if(filteredSpots[0].spots === 0){
+      document.location.href = 'index.html';
+      alert("You have no spots left for this job");
+
+
+    }
+})
+
+})
+
+// removeSpotByJobId("softwareEnginner");
+}
+)})
