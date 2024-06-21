@@ -1,3 +1,5 @@
+
+
 const pageWrapper = document.getElementById("page-wrapper");
 
 //nav elements
@@ -103,7 +105,7 @@ const jobList = [
     ],
     jobBenefits,
     "In person",
-    "softwareEnginner",
+    "1",
     "./assets/female-coder.jpg"
   ),
   new Job(
@@ -132,7 +134,7 @@ const jobList = [
     ],
     jobBenefits,
     "In person",
-    "hardwareSpecialist",
+    "2",
     "./assets/coder-thinking.jpg"
   ),
   new Job(
@@ -158,10 +160,11 @@ const jobList = [
       "Provide training and support during the implementation of technology solutions.",
       "Stay informed about industry trends and technological advancements.",
       "Contribute to the development of proposals and presentations for clients.",
+
     ],
     jobBenefits,
     "In person",
-    "TechnologySolutionConsultant",
+    "3",
     "./assets/counseling.jpg"
   ),
 ];
@@ -297,13 +300,23 @@ window.addEventListener("DOMContentLoaded", () => {
 //   .catch(error => {
 //     console.error('There was a problem with the fetch operation:', error);
 //   });
-
-axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
-  const data = JSON.parse(response.data);
-  console.log(data.results);
-}).catch((error) => {
-  console.log(error); 
-});
+// Using Axios library to get data from the API sigma
+// axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+//   const data = JSON.parse(response.data);
+//   const spotObject = data.results;
+//   // console.log(spotObject);
+//   // console.log(data.results);
+//   //  console.log(data.results[0].id);
+//  spotObject.forEach((spot) => {
+//    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+//    if(matchingJob){
+//     matchingJob.spots = spot.spots;
+//   }
+//   console.log(jobList);
+// // }).catch((error) => {
+// //   console.log(error); 
+// // });
+// })})
 
 
 
@@ -702,6 +715,27 @@ function confirmSubmit() {
   modal.close();
   applicationForm.style.display = "none";
   applicationDone.style.display = "block";
+    // Get the current URL
+    const url = window.location.href;
+
+    // Create a URL object
+    const urlObj = new URL(url);
+  
+    // Use URLSearchParams to extract the query parameters
+    const params = new URLSearchParams(urlObj.search);
+  
+    // Get the value of the 'id' parameter
+    const id = params.get('id');
+  
+    // Log the id to the console
+    // alert(id);
+  
+    axios.post('https://api.santiagohe75.workers.dev/updateSpots?id=' + id).then((response) => {
+      console.log('Response:', response.data);
+    })
+    .catch((error) => {
+      console.error('There was an error making the POST request!', error);
+    });
 
 }
 //format of the application
@@ -738,6 +772,9 @@ function submitApplication() {
   const phoneNumberPattern = /\(\d{3}\) \d{3}-\d{4}/g;
   const socialSecurityPattern = /\d{3}-\d{2}-\d{4}/g;
   const addressPattern = /^[#.0-9a-z\s,-]+$/gi;
+
+
+
 
   if (
     firstNameInput.value == "" ||
@@ -914,6 +951,9 @@ if (document.body.contains(jobOpenings)) {
     let jobDiv = document.createElement("div");
     jobDiv.classList.add("job-container");
 
+    
+  
+
     let jobTitleHeader = document.createElement("h1");
     jobTitleHeader.textContent = `${job.jobTitle}`;
     jobDiv.appendChild(jobTitleHeader);
@@ -947,7 +987,7 @@ if (document.body.contains(jobOpenings)) {
         targetJob = e.currentTarget.id;
         let jobsArray = Object.values(jobList);
         let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-        document.location.href = "application.html";
+        document.location.href = "application.html?id=" + targetJob;
         localStorage.setItem("targetJob", targetJob);
       } else {
         modal.showModal();
@@ -979,6 +1019,7 @@ if (document.body.contains(jobOpenings)) {
     jobApplyDiv.innerHTML = `<h1>${job.jobTitle}</h1>
         <p>${job.location}</p>
         <p>${job.salary} per year</p>
+        
         <button type='button' class='apply' name='${job.id}'>Apply</button>
         `;
 
@@ -1044,10 +1085,60 @@ if (document.body.contains(jobOpenings)) {
     jobListColumn.innerHTML = jobList[0].jobContainer;
 
     jobDiv.addEventListener("click", () => {
+
       jobListColumn.innerHTML = job.jobContainer;
+
     });
   });
+  axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+    const data = JSON.parse(response.data);
+    const spotObject = data.results;
+    // console.log(spotObject);
+    // console.log(data.results);
+    //  console.log(data.results[0].id);
+   spotObject.forEach((spot) => {
+     let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+     if(matchingJob){
+      matchingJob.spots = spot.spots;
+    }
+  
+  
+  
+  })
+  function checkSpots(targetJob) {
+    const job = jobList.find((job) => job.targetJob === targetJob);
+    return job ? job.spots : 0;
+  }
+  console.log(checkSpots("3"));
+  
+  // console.log(jobList[0].spots);
+  console.log(jobList);
 
+  
+  
+  
+
+  let jobDivs = document.querySelectorAll(".job-container");
+  jobDivs.forEach((div) => {
+  div.addEventListener("click", (e) => {
+  
+    let applyButton = document.querySelector(".apply");
+    applyButton.addEventListener("click", (event) => {
+    let storedSpots = Object.values(jobList);
+    let filteredSpots = storedSpots.filter(
+      (value) => value.id == localStorage.getItem("targetJob")
+    )
+      if(filteredSpots[0].spots == 0){
+        alert("You have no spots left for this job");
+        document.location.href = "job-list.html";
+      }
+  })
+  
+  })
+  
+  // removeSpotByJobId("softwareEnginner");
+  }
+  )})
   let jobDivs = document.querySelectorAll(".job-container");
   jobDivs.forEach((div) => {
     div.addEventListener("click", function (e) {
@@ -1062,7 +1153,7 @@ if (document.body.contains(jobOpenings)) {
           targetJob = event.target.name;
           let jobsArray = Object.values(jobList);
           let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-          document.location.href = "application.html";
+          document.location.href = "application.html?id=" + targetJob;
           localStorage.setItem("targetJob", targetJob);
         } else {
           modal.showModal();
@@ -1070,20 +1161,24 @@ if (document.body.contains(jobOpenings)) {
       });
     });
   });
-
+ 
   let applyButton = document.querySelector(".apply");
   applyButton.addEventListener("click", (event) => {
+
     if (localStorage.getItem("loggedIn") == "true") {
       targetJob = event.target.name;
       let jobsArray = Object.values(jobList);
       let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-      document.location.href = "application.html";
+      document.location.href = "application.html?id=" + targetJob;
       localStorage.setItem("targetJob", targetJob);
     } else {
       modal.showModal();
     }
   });
 }
+
+
+
 
 const headerBackgrounds = document.querySelectorAll(".background");
 let imageIndex = 0;
@@ -1101,6 +1196,34 @@ function changeBackground() {
 if (document.body.contains(homeLoginHeader)) { 
   setInterval(changeBackground, 6000);
 }
+// axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+//   const data = JSON.parse(response.data);
+//   const spotObject = data.results;
+//   // console.log(spotObject);
+//   // console.log(data.results);
+//   //  console.log(data.results[0].id);
+//  spotObject.forEach((spot) => {
+//    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+//    if(matchingJob){
+//     matchingJob.spots = spot.spots;
+//   }
+
+
+
+// })
+
+// console.log(jobList[0].spots);
+// console.log(jobList);
+
+
+// // removeSpotByJobId("softwareEnginner");
+// }
+// )
+
+
+// }).catch((error) => {
+//   console.log(error); 
+// });
 
 //scrapped logic for being able to change your profile picture, security issues with the live server
 
