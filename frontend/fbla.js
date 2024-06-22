@@ -1213,7 +1213,7 @@ function checkSpots(targetJob) {
   const job = jobList.find((job) => job.targetJob === targetJob);
   return job ? job.spots : 0;
 }
-console.log(checkSpots("3"));
+console.log(checkSpots("2"));
 
 // console.log(jobList[0].spots);
 console.log(jobList);
