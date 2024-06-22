@@ -66,6 +66,8 @@
             <br />If you leave the page, your information will not save.
           </p>
           <div class="info">
+
+            <div id="firstName">
             <div class="input-box">
               <span class="details">First Name*</span>
               <input
@@ -75,16 +77,9 @@
                 required
               />
             </div>
-
-            <div class="input-box">
-              <span class="details">Middle Name (Optional)</span>
-              <input
-                id="middleName-input"
-                type="text"
-                placeholder="Middle Name"
-              />
             </div>
 
+            <div id="lastName">
             <div class="input-box">
               <span class="details">Last Name*</span>
               <input
@@ -94,7 +89,8 @@
                 required
               />
             </div>
-
+          </div>
+            
             <div class="input-box">
               <span class="details">Birthday*</span>
               <input
@@ -104,6 +100,7 @@
                 required
               />
             </div>
+            
 
             <div class="input-box">
               <span class="details">Phone Number*</span>
@@ -152,7 +149,7 @@
               <span class="details select-details">Years of Experience*</span>
               <select title="experience-select" id="experience-select">
                 <option value="" selected disabled>Select Years</option>
-                <option value="<1">Less than 1</option>
+                <option value="1">Less than 1</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

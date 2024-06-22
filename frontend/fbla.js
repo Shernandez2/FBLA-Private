@@ -1,4 +1,4 @@
-import { Hono } from '/backend/node_modules/hono/dist/hono.js';
+// import { Hono } from '/backend/node_modules/hono/dist/hono.js';
 //global element
 const pageWrapper = document.getElementById("page-wrapper");
 

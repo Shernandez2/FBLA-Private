@@ -109,13 +109,13 @@
 
   #header-info > h1 {
     font-size: 5vw;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
     opacity: 0;
     font-size: 3vw;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
   }
   #header-img {
     display: none;
@@ -628,13 +628,13 @@
 
   #header-info > h1 {
     font-size: 7vh;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
     opacity: 0;
     font-size: 5vh;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
     margin-bottom: 5vh;
   }
   #header-img {
@@ -1084,7 +1084,7 @@
 
   #header-info > h1 {
     font-size: 3vw;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
@@ -1092,7 +1092,7 @@
     font-size: 1.5vw;
     margin-top: -2vh;
     margin-bottom: 4vh;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
   }
   #open-job-list {
     width: 10vw;
@@ -1303,22 +1303,24 @@
 
   .job-apply {
     padding: 2vw;
-    height: 34vh;
+    height: 24vh;
   }
 
   .apply {
     background-color: #11eed8;
     color: #070436;
     font-family: "Ubuntu", sans-serif;
-    padding: 0.5vw;
+    padding: 0.9vw;
     border-radius: 1vw;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     border: none;
-    margin-top: 2vh;
+    margin-top: -2vh;
+    margin-left: 30vw;
   }
 
   .apply:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 
   #job-list-column-2 {
@@ -1327,7 +1329,7 @@
     overflow: hidden;
     position: sticky;
     top: 0;
-    height: 98vh;
+    height: 87vh;
   }
 
   .job-container-info {
@@ -1422,7 +1424,7 @@
 
   /* *******************************Start of Application page************************* */
   .form {
-    width: 30%;
+    width: 40%;
   }
 
   .info {
@@ -1434,16 +1436,19 @@
   .details {
     padding-left: 12%;
     margin-bottom: 2vh;
+    font-size: 1.3rem;
   }
 
   .input-box > select {
     margin-bottom: 3vh;
-    width: 35%;
+    width: 40%;
+    font-size: 1.2rem;
   }
 
   .input-box > textarea {
     width: 80%;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .select-box {
@@ -1452,11 +1457,13 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.3rem;
   }
 
   .input-box > input {
     width: 80%;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .application-done {
@@ -1485,7 +1492,7 @@
   }
 
   .application-fyi {
-    font-size: 1vw;
+    font-size: 1.4vw;
     line-height: 4vh;
   }
 
@@ -1519,6 +1526,42 @@
     margin-bottom: 3vh;
   }
 
+  #firstName {
+    margin-right: 50%;
+    margin-left: 6%;  
+  }
+  
+  #lastName {
+    margin-left: 67%;
+    margin-top: -15.1%;
+    margin-left: 50%;
+    margin-right: 6%;
+  }
+
+  #birthday-input {
+    width: 24%;
+    margin-bottom: 5%;
+    margin-top: -7%;
+    margin-right: 45%;
+  }
+
+  #phoneNumber-input {
+    width: 25%;
+    margin-right: 64%;
+  }
+
+  #socialSecurity-input {
+    width: 22%;
+    margin-right: 68%;
+  }
+
+  #experience-select {
+    width: 22%;
+  }
+
+  #education-select {
+    width: 52%;
+  }
   /* ***************************End of application page****************************** */
 }
 
@@ -1613,7 +1656,7 @@ nav > img {
   background-color: #11eed8;
   border: 0.5vw solid #11eed8;
   border-radius: 1vw;
-  animation: fade 2s 4s ease forwards;
+  animation: fade 1s 2s ease forwards;
   transition: color 0.5s, background-color 0.5s;
 }
 
