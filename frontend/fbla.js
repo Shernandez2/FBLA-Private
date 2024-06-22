@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // import { Hono } from '/backend/node_modules/hono/dist/hono.js';
 //global element
+=======
+
+
+>>>>>>> 788d346abad268ef9d70990d04c6c03494c87c8e
 const pageWrapper = document.getElementById("page-wrapper");
 
 //nav elements
@@ -64,7 +69,7 @@ class Job {
   }
 }
 
-const jobBenefits = [
+jobBenefits = [
   "401(k)",
   "401(k) matching",
   "Dental Insurance",
@@ -105,7 +110,7 @@ const jobList = [
     ],
     jobBenefits,
     "In person",
-    "softwareEnginner",
+    "1",
     "./assets/female-coder.jpg"
   ),
   new Job(
@@ -134,7 +139,7 @@ const jobList = [
     ],
     jobBenefits,
     "In person",
-    "hardwareSpecialist",
+    "2",
     "./assets/coder-thinking.jpg"
   ),
   new Job(
@@ -160,19 +165,19 @@ const jobList = [
       "Provide training and support during the implementation of technology solutions.",
       "Stay informed about industry trends and technological advancements.",
       "Contribute to the development of proposals and presentations for clients.",
+
     ],
     jobBenefits,
     "In person",
-    "TechnologySolutionConsultant",
+    "3",
     "./assets/counseling.jpg"
   ),
 ];
 
 
 
-
-
   
+
 
     
  
@@ -286,6 +291,85 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+
+// fetch('https://api.santiagohe75.workers.dev/getJobs')
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data); // Do something with the data
+//   })
+//   .catch(error => {
+//     console.error('There was a problem with the fetch operation:', error);
+//   });
+// Using Axios library to get data from the API sigma
+// axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+//   const data = JSON.parse(response.data);
+//   const spotObject = data.results;
+//   // console.log(spotObject);
+//   // console.log(data.results);
+//   //  console.log(data.results[0].id);
+//  spotObject.forEach((spot) => {
+//    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+//    if(matchingJob){
+//     matchingJob.spots = spot.spots;
+//   }
+//   console.log(jobList);
+// // }).catch((error) => {
+// //   console.log(error); 
+// // });
+// })})
+
+
+
+// if (document.contains(applicationInfo)){
+//   let storedSpots = Object.values(jobList);
+//   let filteredSpots = storedSpots.filter(
+//     (value) => value.id == localStorage.getItem("targetJob")
+//   );
+//   getData(`${filteredSpots[0].jobTitle}`)
+//   console.log(filteredSpots)
+// }
+// async function updateSpots(jobId) {
+  
+//     const response = await axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${jobId}`);
+//     console.log('Response:', response.data);
+// }
+// const updateSpots = () =>{
+//   axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${targetJob}`)
+// }
+
+
+// // Function to handle button click (or other event)
+// function onUpdateSpotsButtonClick() {
+//   const jobId = 1; // Replace with the actual job ID
+//   updateSpots(jobId);
+// }
+// if (document.contains(applicationInfo)){
+//     let storedSpots = Object.values(jobList);
+//     let filteredSpots = storedSpots.filter(
+//       (value) => value.id == localStorage.getItem("targetJob")
+//     );
+//     onUpdateSpotsButtonClick(`${filteredSpots[0].jobTitle}`)
+//     console.log(filteredSpots)
+//   }
+// Axios.get('https://api.example.com/data')
+//     .then(response => {
+//         console.log(response.data);
+//     })
+//     .catch(error => {
+//         console.error('There was an error making the GET request!', error);
+//     });
+
+// const getData = () => {
+//   axios.get('https://api.santiagohe75.workers.dev/jobList').then(response => {
+//     console.log(response);
+//   })
+// }
+
 //functionality for nav for smaller media queries
 if (document.body.contains(menuContent)) {
   menu.addEventListener("click", function () {
@@ -304,7 +388,7 @@ if (document.body.contains(menuContent)) {
 // log in and sign up logic
 
 //check for local storage
-export function logIn() {
+function logIn() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -360,7 +444,7 @@ export function logIn() {
 }
 
 //set local storage
-export function createAccount() {
+function createAccount() {
   //if there is already objects saved into local storage, the code will run this if statement
   if (storedUsers != null) {
     //create the variables for the filters
@@ -507,7 +591,7 @@ if (document.body.contains(signUpPassInput)) {
 }
 
 //switch the page to the sign up page
-export function switchToSignUp() {
+function switchToSignUp() {
   accountFormSubheader.innerHTML = "Create An Account";
   logInForm.style.display = "none";
   signUpForm.style.display = "block";
@@ -518,7 +602,7 @@ export function switchToSignUp() {
 }
 
 //switch the page to the log in page
-export function switchToLogIn() {
+function switchToLogIn() {
   accountFormSubheader.innerHTML = "Log Into Your Account";
   signUpForm.style.display = "none";
   logInForm.style.display = "block";
@@ -546,11 +630,11 @@ function showSignupPassword() {
 }
 
 //log out functions, changes logged in state
-export function logOut() {
+function logOut() {
   modal.showModal();
 }
 
-export function confirmLogOut() {
+function confirmLogOut() {
   document.location.href = "index.html";
   loggedIn = false;
   localStorage.setItem("loggedIn", loggedIn);
@@ -590,7 +674,7 @@ if (document.body.contains(modal)) {
 
 //functions for submitting the applications
 //these functions store the application info in local storage for later access
-export function confirmSubmit() {
+function confirmSubmit() {
   //variables to capture the date the application was submitted
   const date = new Date();
   const year = date.getFullYear();
@@ -636,10 +720,31 @@ export function confirmSubmit() {
   modal.close();
   applicationForm.style.display = "none";
   applicationDone.style.display = "block";
+    // Get the current URL
+    const url = window.location.href;
+
+    // Create a URL object
+    const urlObj = new URL(url);
+  
+    // Use URLSearchParams to extract the query parameters
+    const params = new URLSearchParams(urlObj.search);
+  
+    // Get the value of the 'id' parameter
+    const id = params.get('id');
+  
+    // Log the id to the console
+    // alert(id);
+  
+    axios.post('https://api.santiagohe75.workers.dev/updateSpots?id=' + id).then((response) => {
+      console.log('Response:', response.data);
+    })
+    .catch((error) => {
+      console.error('There was an error making the POST request!', error);
+    });
 
 }
 //format of the application
-export function phoneFormat(input) {
+function phoneFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 10); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 0) {
@@ -654,7 +759,7 @@ export function phoneFormat(input) {
   return input;
 }
 
-export function socialSecurityFormat(input) {
+function socialSecurityFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 9); //Strip everything but 1st 10 digits
   let size = input.length;
   if (size > 3) {
@@ -667,11 +772,14 @@ export function socialSecurityFormat(input) {
 }
 
 //these funcitons check to make sure all of the REQUIRED fields are filled out
-export function submitApplication() {
+function submitApplication() {
   const emailPattern = /^[a-zA-Z0-9._-]{1,16}@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
   const phoneNumberPattern = /\(\d{3}\) \d{3}-\d{4}/g;
   const socialSecurityPattern = /\d{3}-\d{2}-\d{4}/g;
   const addressPattern = /^[#.0-9a-z\s,-]+$/gi;
+
+
+
 
   if (
     firstNameInput.value == "" ||
@@ -794,8 +902,6 @@ if (document.body.contains(applicationInfo)) {
 
 
 
-
-
 // *****************************************************************************************************************************************************************************************
 //this code checks to see which jobs have been applied to
 //and populates them into the profile page
@@ -850,6 +956,9 @@ if (document.body.contains(jobOpenings)) {
     let jobDiv = document.createElement("div");
     jobDiv.classList.add("job-container");
 
+    
+  
+
     let jobTitleHeader = document.createElement("h1");
     jobTitleHeader.textContent = `${job.jobTitle}`;
     jobDiv.appendChild(jobTitleHeader);
@@ -883,7 +992,7 @@ if (document.body.contains(jobOpenings)) {
         targetJob = e.currentTarget.id;
         let jobsArray = Object.values(jobList);
         let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-        document.location.href = "application.html";
+        document.location.href = "application.html?id=" + targetJob;
         localStorage.setItem("targetJob", targetJob);
       } else {
         modal.showModal();
@@ -915,6 +1024,7 @@ if (document.body.contains(jobOpenings)) {
     jobApplyDiv.innerHTML = `<h1>${job.jobTitle}</h1>
         <p>${job.location}</p>
         <p>${job.salary} per year</p>
+        
         <button type='button' class='apply' name='${job.id}'>Apply</button>
         `;
 
@@ -980,10 +1090,12 @@ if (document.body.contains(jobOpenings)) {
     jobListColumn.innerHTML = jobList[0].jobContainer;
 
     jobDiv.addEventListener("click", () => {
+
       jobListColumn.innerHTML = job.jobContainer;
+
     });
   });
-
+  
   let jobDivs = document.querySelectorAll(".job-container");
   jobDivs.forEach((div) => {
     div.addEventListener("click", function (e) {
@@ -998,7 +1110,7 @@ if (document.body.contains(jobOpenings)) {
           targetJob = event.target.name;
           let jobsArray = Object.values(jobList);
           let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-          document.location.href = "application.html";
+          document.location.href = "application.html?id=" + targetJob;
           localStorage.setItem("targetJob", targetJob);
         } else {
           modal.showModal();
@@ -1006,20 +1118,23 @@ if (document.body.contains(jobOpenings)) {
       });
     });
   });
-
+ 
   let applyButton = document.querySelector(".apply");
   applyButton.addEventListener("click", (event) => {
+
     if (localStorage.getItem("loggedIn") == "true") {
       targetJob = event.target.name;
       let jobsArray = Object.values(jobList);
       let filteredJob = jobsArray.filter((value) => value.id == targetJob);
-      document.location.href = "application.html";
+      document.location.href = "application.html?id=" + targetJob;
       localStorage.setItem("targetJob", targetJob);
     } else {
       modal.showModal();
     }
   });
 }
+
+
 
 const headerBackgrounds = document.querySelectorAll(".background");
 let imageIndex = 0;
@@ -1037,6 +1152,34 @@ function changeBackground() {
 if (document.body.contains(homeLoginHeader)) { 
   setInterval(changeBackground, 6000);
 }
+// axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+//   const data = JSON.parse(response.data);
+//   const spotObject = data.results;
+//   // console.log(spotObject);
+//   // console.log(data.results);
+//   //  console.log(data.results[0].id);
+//  spotObject.forEach((spot) => {
+//    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+//    if(matchingJob){
+//     matchingJob.spots = spot.spots;
+//   }
+
+
+
+// })
+
+// console.log(jobList[0].spots);
+// console.log(jobList);
+
+
+// // removeSpotByJobId("softwareEnginner");
+// }
+// )
+
+
+// }).catch((error) => {
+//   console.log(error); 
+// });
 
 //scrapped logic for being able to change your profile picture, security issues with the live server
 
@@ -1056,3 +1199,54 @@ if (document.body.contains(homeLoginHeader)) {
 // if (document.body.contains(profilePictureDisplay)) {
 
 // }
+axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+  const data = JSON.parse(response.data);
+  const spotObject = data.results;
+  // console.log(spotObject);
+  // console.log(data.results);
+  //  console.log(data.results[0].id);
+ spotObject.forEach((spot) => {
+   let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+   if(matchingJob){
+    matchingJob.spots = spot.spots;
+  }
+
+
+
+})
+function checkSpots(targetJob) {
+  const job = jobList.find((job) => job.targetJob === targetJob);
+  return job ? job.spots : 0;
+}
+console.log(checkSpots("2"));
+
+// console.log(jobList[0].spots);
+console.log(jobList);
+
+
+
+
+
+let jobDivs = document.querySelectorAll(".job-container");
+jobDivs.forEach((div) => {
+div.addEventListener("click", (e) => {
+
+  let applyButton = document.querySelector(".apply");
+  applyButton.addEventListener("click", (event) => {
+  let storedSpots = Object.values(jobList);
+  let filteredSpots = storedSpots.filter(
+    (value) => value.id == localStorage.getItem("targetJob")
+  )
+    if(filteredSpots[0].spots === 0){
+      document.location.href = 'index.html';
+      alert("You have no spots left for this job");
+
+
+    }
+})
+
+})
+
+// removeSpotByJobId("softwareEnginner");
+}
+)})

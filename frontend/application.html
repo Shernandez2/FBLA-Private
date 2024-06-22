@@ -6,6 +6,7 @@
     <title>Application</title>
     <link rel="icon" href="./assets/nova.png" />
     <link rel="stylesheet" href="fbla.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <nav>
@@ -130,7 +131,7 @@
                 id="socialSecurity-input"
                 type="text"
                 placeholder="Social Security"
-                onInput=""
+                onInput="this.value = socialSecurityFormat(this.value)"
                 required
               />
             </div>
@@ -260,7 +261,7 @@
       </div>
     </div>
 
-    <script src="fbla.js"></script>
-    <script type="module" src="buttons.js"></script>
+    <script defer src="fbla.js"></script>
+ 
   </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Profile</title>
     <link rel="icon" href="./assets/nova.png">
     <link rel="stylesheet" href="fbla.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div id="profile-page-wrapper">
@@ -41,7 +42,7 @@
                             <a href="job-list.html">Apply today!</a>
                         </p>
                     </div>
-                    <button type="button" id="log-out" onclick="">Log Out</button>
+                    <button type="button" id="log-out" onclick="logOut()">Log Out</button>
                 </div>
             </div>
             
@@ -60,8 +61,8 @@
         </dialog>
     
 
-    <script type="module" src="fbla.js"></script>
-    <script type="module" src="buttons.js"></script>
+    <script src="fbla.js"></script>
+   
     
 </body>
 </html>
