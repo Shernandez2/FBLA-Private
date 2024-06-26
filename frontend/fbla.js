@@ -1,5 +1,3 @@
-
-
 const pageWrapper = document.getElementById("page-wrapper");
 
 //nav elements
@@ -160,7 +158,6 @@ const jobList = [
       "Provide training and support during the implementation of technology solutions.",
       "Stay informed about industry trends and technological advancements.",
       "Contribute to the development of proposals and presentations for clients.",
-
     ],
     jobBenefits,
     "In person",
@@ -168,14 +165,6 @@ const jobList = [
     "./assets/counseling.jpg"
   ),
 ];
-
-
-
-  
-
-
-    
- 
 
 // ubmitButtonfrfr.addEventListener('click', subtractSpotByJobTitle('Software Engineer'))
 
@@ -284,8 +273,7 @@ window.addEventListener("DOMContentLoaded", () => {
       tab.appendChild(accountTabIcon);
     });
   }
-})
-
+});
 
 // fetch('https://api.santiagohe75.workers.dev/getJobs')
 //   .then(response => {
@@ -314,11 +302,9 @@ window.addEventListener("DOMContentLoaded", () => {
 //   }
 //   console.log(jobList);
 // // }).catch((error) => {
-// //   console.log(error); 
+// //   console.log(error);
 // // });
 // })})
-
-
 
 // if (document.contains(applicationInfo)){
 //   let storedSpots = Object.values(jobList);
@@ -329,14 +315,13 @@ window.addEventListener("DOMContentLoaded", () => {
 //   console.log(filteredSpots)
 // }
 // async function updateSpots(jobId) {
-  
+
 //     const response = await axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${jobId}`);
 //     console.log('Response:', response.data);
 // }
 // const updateSpots = () =>{
 //   axios.post(`https://api.santiagohe75.workers.dev/updateSpots?id=${targetJob}`)
 // }
-
 
 // // Function to handle button click (or other event)
 // function onUpdateSpotsButtonClick() {
@@ -715,29 +700,124 @@ function confirmSubmit() {
   modal.close();
   applicationForm.style.display = "none";
   applicationDone.style.display = "block";
-    // Get the current URL
-    const url = window.location.href;
+  // Get the current URL
+  const url = window.location.href;
 
-    // Create a URL object
-    const urlObj = new URL(url);
-  
-    // Use URLSearchParams to extract the query parameters
-    const params = new URLSearchParams(urlObj.search);
-  
-    // Get the value of the 'id' parameter
-    const id = params.get('id');
-  
-    // Log the id to the console
-    // alert(id);
-  
-    axios.post('https://api.santiagohe75.workers.dev/updateSpots?id=' + id).then((response) => {
-      console.log('Response:', response.data);
+  // Create a URL object
+  const urlObj = new URL(url);
+
+  // Use URLSearchParams to extract the query parameters
+  const params = new URLSearchParams(urlObj.search);
+
+  // Get the value of the 'id' parameter
+  const id = params.get("id");
+
+  // Log the id to the console
+  // alert(id);
+
+  axios
+    .post("https://api.santiagohe75.workers.dev/updateSpots?id=" + id)
+    .then((response) => {
+      console.log("Response:", response.data);
     })
     .catch((error) => {
-      console.error('There was an error making the POST request!', error);
+      console.error("There was an error making the POST request!", error);
     });
 
+    
+
+const API_TOKEN = "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";
+
+async function query(payload) {
+    const response = await fetch(
+        "https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
+        
+        {
+            headers: { 
+                Authorization: `Bearer ${API_TOKEN}`, 
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify(payload),
+        }
+    );
+
+    const result = await response.json();
+    return result;
 }
+
+
+let selectedExperience = experienceSelect.value;
+
+// Update the variable inside the event listener
+experienceSelect.addEventListener('change', function() {
+    selectedExperience = experienceSelect.value;
+    console.log(selectedExperience);
+});
+
+let selectedEducation = educationSelect.value;
+educationSelect.addEventListener('change', function() {
+  const selectedEducation = educationSelect.value;
+  console.log(selectedEducation);
+});
+
+let selectedCertification = certificationInput.value;
+certificationInput.addEventListener('change', function() {
+  const selectedCertification = certificationInput.value;
+  console.log(selectedCertification);
+});
+
+let selectedSkill = skillInput.value;
+skillInput.addEventListener('change', function() {
+  const selectedSkill = skillInput.value;  
+  console.log(selectedSkill);
+});
+
+const payload = { 
+    "inputs": `Jhon his education level is ${selectedEducation} and has skills such as ${selectedSkill} as well as a ${selectedCertification} certifications and has ${selectedExperience} years of experience in the industry.Do you think he is fit to be a software engineer? the requirements are 4 or more than 4 years of expirience, one or more certifications, and one degree and must meet all of this to be qualified give me only one answer in a boolean of true or false and put the answer inside a parenthesis().`,
+};
+
+query(payload).then((response) => {
+  console.log(JSON.stringify(response));
+  if (JSON.stringify(response).toString().toLowerCase().includes("(true)")) {
+    const acceptedDialog = document.getElementById('accepted-dialog');
+      acceptedDialog.showModal();
+  }else if (JSON.stringify(response).toString().toLowerCase().includes("(false)")) {
+    const rejectDialog = document.getElementById('reject-dialog');
+    rejectDialog.showModal();
+  }else if (JSON.stringify(response).toString().toLowerCase().includes("(true or false)")) {
+    const acceptedDialog = document.getElementById('accepted-dialog');
+      acceptedDialog.showModal();
+  }else if (JSON.stringify(response).toString().toLowerCase().includes("(true, false)")) {
+    const acceptedDialog = document.getElementById('accepted-dialog');
+      acceptedDialog.showModal();
+  }
+
+
+    // alert(JSON.stringify(response).toString().toLowerCase().includes("(true)"));   
+    
+
+
+}).catch((error) => {
+    console.error(error);
+});
+}
+  function closeDialog2() {
+    const acceptedDialog = document.getElementById('accepted-dialog');
+    const closeDialog = document.getElementById('close-dialog');
+    closeDialog.addEventListener('click', () => {  
+    acceptedDialog.close();
+    });
+  } 
+
+  function closeDialog3() {
+    const rejectDialog = document.getElementById('reject-dialog');
+    const closeDialog = document.getElementById('close-dialog2');
+    closeDialog.addEventListener('click', () => {  
+      rejectDialog.close();
+      });
+  }
+ 
 //format of the application
 function phoneFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 10); //Strip everything but 1st 10 digits
@@ -772,9 +852,6 @@ function submitApplication() {
   const phoneNumberPattern = /\(\d{3}\) \d{3}-\d{4}/g;
   const socialSecurityPattern = /\d{3}-\d{2}-\d{4}/g;
   const addressPattern = /^[#.0-9a-z\s,-]+$/gi;
-
-
-
 
   if (
     firstNameInput.value == "" ||
@@ -893,10 +970,6 @@ if (document.body.contains(applicationInfo)) {
   }
 }
 
-
-
-
-
 // *****************************************************************************************************************************************************************************************
 //this code checks to see which jobs have been applied to
 //and populates them into the profile page
@@ -951,9 +1024,6 @@ if (document.body.contains(jobOpenings)) {
     let jobDiv = document.createElement("div");
     jobDiv.classList.add("job-container");
 
-    
-  
-
     let jobTitleHeader = document.createElement("h1");
     jobTitleHeader.textContent = `${job.jobTitle}`;
     jobDiv.appendChild(jobTitleHeader);
@@ -983,12 +1053,14 @@ if (document.body.contains(jobOpenings)) {
     jobOpenings.appendChild(mobileJobDiv);
 
     mobileJobDiv.addEventListener("click", (e) => {
+   
       if (localStorage.getItem("loggedIn") == "true") {
         targetJob = e.currentTarget.id;
         let jobsArray = Object.values(jobList);
         let filteredJob = jobsArray.filter((value) => value.id == targetJob);
         document.location.href = "application.html?id=" + targetJob;
         localStorage.setItem("targetJob", targetJob);
+      
       } else {
         modal.showModal();
       }
@@ -1085,12 +1157,10 @@ if (document.body.contains(jobOpenings)) {
     jobListColumn.innerHTML = jobList[0].jobContainer;
 
     jobDiv.addEventListener("click", () => {
-
       jobListColumn.innerHTML = job.jobContainer;
-
     });
   });
-  
+
   let jobDivs = document.querySelectorAll(".job-container");
   jobDivs.forEach((div) => {
     div.addEventListener("click", function (e) {
@@ -1113,10 +1183,9 @@ if (document.body.contains(jobOpenings)) {
       });
     });
   });
- 
+
   let applyButton = document.querySelector(".apply");
   applyButton.addEventListener("click", (event) => {
-
     if (localStorage.getItem("loggedIn") == "true") {
       targetJob = event.target.name;
       let jobsArray = Object.values(jobList);
@@ -1128,8 +1197,6 @@ if (document.body.contains(jobOpenings)) {
     }
   });
 }
-
-
 
 const headerBackgrounds = document.querySelectorAll(".background");
 let imageIndex = 0;
@@ -1144,104 +1211,100 @@ function changeBackground() {
   headerBackgrounds[imageIndex].classList.add("showing");
 }
 
-if (document.body.contains(homeLoginHeader)) { 
+if (document.body.contains(homeLoginHeader)) {
   setInterval(changeBackground, 6000);
 }
-// axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
-//   const data = JSON.parse(response.data);
-//   const spotObject = data.results;
-//   // console.log(spotObject);
-//   // console.log(data.results);
-//   //  console.log(data.results[0].id);
-//  spotObject.forEach((spot) => {
-//    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
-//    if(matchingJob){
-//     matchingJob.spots = spot.spots;
-//   }
 
 
 
-// })
 
-// console.log(jobList[0].spots);
-// console.log(jobList);
-
-
-// // removeSpotByJobId("softwareEnginner");
-// }
-// )
-
-
-// }).catch((error) => {
-//   console.log(error); 
-// });
-
-//scrapped logic for being able to change your profile picture, security issues with the live server
-
-// function saveProfilePicture() {
-//     let filteredUser = storedUsers.filter(value => value.userName == currentUser[0].userName && value.passWord == currentUser[0].passWord)[0];
-//     filteredUser.profilePicture = profilePictureInput.value;
-//     localStorage.setItem("users", JSON.stringify(storedUsers));
-//     currentUser[0].profilePicture = profilePictureInput.value;
-//     console.log(filteredUser.profilePicture);
-//     profilePictureDisplay.src = currentUser[0].profilePicture;
-// }
-
-// function exitProfileWindow() {
-//     profilePictureWindow.style.display = "none";
-// }
-
-// if (document.body.contains(profilePictureDisplay)) {
-
-// }
-axios.get('https://api.santiagohe75.workers.dev/getJobs').then((response) => {
+// *****************************************************************************************************************************************************************************************
+//start of fetch from the backend to interact with the database in cloudflare.
+//this code fetches the info of the jobspots from the worker D1 database table on cloudflare
+axios.get("https://api.santiagohe75.workers.dev/getJobs").then((response) => {
   const data = JSON.parse(response.data);
   const spotObject = data.results;
-  // console.log(spotObject);
-  // console.log(data.results);
-  //  console.log(data.results[0].id);
- spotObject.forEach((spot) => {
-   let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
-   if(matchingJob){
-    matchingJob.spots = spot.spots;
-  }
 
-
-
-})
-function checkSpots(targetJob) {
-  const job = jobList.find((job) => job.targetJob === targetJob);
-  return job ? job.spots : 0;
-}
-console.log(checkSpots("2"));
-
-// console.log(jobList[0].spots);
-console.log(jobList);
-
-
-
-
-
-let jobDivs = document.querySelectorAll(".job-container");
-jobDivs.forEach((div) => {
-div.addEventListener("click", (e) => {
-
-  let applyButton = document.querySelector(".apply");
-  applyButton.addEventListener("click", (event) => {
-  let storedSpots = Object.values(jobList);
-  let filteredSpots = storedSpots.filter(
-    (value) => value.id == localStorage.getItem("targetJob")
-  )
-    if(filteredSpots[0].spots === 0){
-      document.location.href = 'index.html';
-      alert("You have no spots left for this job");
-
-
+  //Combines the arrays of jobList with the array fetched by the databse
+  spotObject.forEach((spot) => {
+    let matchingJob = jobList.find((job) => job.jobTitle == spot.title);
+    if (matchingJob) {
+      matchingJob.spots = spot.spots;
     }
-})
+  });
+  function checkSpots(targetJob) {
+    const job = jobList.find((job) => job.targetJob === targetJob);
+    return job ? job.spots : 0;
+  }
+  console.log(checkSpots("2"));
+
+  // console.log(jobList[0].spots);
+  console.log(jobList);
+
+  let mobileJobDiv2 = document.querySelectorAll(".job-container-mobile");
+  mobileJobDiv2.forEach((div) => {
+    div.addEventListener("click", (e) => {
+      let storedSpots = Object.values(jobList);
+      let filteredSpots = storedSpots.filter(
+        (value) => value.id == localStorage.getItem("targetJob")
+      );
+
+      if (filteredSpots[0].spots === 0) {
+        document.location.href = "job-list.html";
+        alert(
+          "There is no spots available for this job/you need to log in to apply for it"
+        );
+      }
+    })
+  })
+
+  let appluButton = document.querySelector(".apply");
+  appluButton.addEventListener("click", (e) => {
+    let storedSpots = Object.values(jobList);
+    let filteredSpots = storedSpots.filter(
+      (value) => value.id == localStorage.getItem("targetJob")
+    );
+   
+    if (filteredSpots[0].spots === 0) {
+      
+      document.location.href = "job-list.html";
+      alert(
+        "There is no spots available for this job/you need to log in to apply for it"
+      );
+      
+    }
+    if (localStorage == "false"){
+      modal.showModal();
+    }
+  })
+
+  let jobDivs = document.querySelectorAll(".job-container");
+  jobDivs.forEach((div) => {
+    div.addEventListener("click", (e) => {
+      let applyButton = document.querySelector(".apply");
+      applyButton.addEventListener("click", (event) => {
+        let storedSpots = Object.values(jobList);
+        let filteredSpots = storedSpots.filter(
+          (value) => value.id == localStorage.getItem("targetJob")
+        );
+
+        if (filteredSpots[0].spots === 0) {
+          document.location.href = "job-list.html";
+          alert(
+            "There is no spots available for this job/you need to log in to apply for it"
+          );
+        }
+      });
+    });
+  });
+
+
+
 
 })
 
-// removeSpotByJobId("softwareEnginner");
-}
-)})
+
+
+
+
+

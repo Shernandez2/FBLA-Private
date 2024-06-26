@@ -153,7 +153,7 @@
               <span class="details select-details">Years of Experience*</span>
               <select title="experience-select" id="experience-select">
                 <option value="" selected disabled>Select Years</option>
-                <option value="<1">Less than 1</option>
+                <option value="less than 1">Less than 1</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -188,16 +188,16 @@
                 <option value="" selected disabled>
                   Select highest level of education
                 </option>
-                <option value="lessThanHigh">
+                <option value="lessThanHighSchool">
                   Less than High School Diploma
                 </option>
-                <option value="high">High School Diploma or GED</option>
-                <option value="college">Some College, but no Degree</option>
-                <option value="associates">Associates Degree</option>
-                <option value="bachelor">Bachelor's Degree</option>
-                <option value="masters">Masters Degree</option>
-                <option value="professional">Professional Degree</option>
-                <option value="doctorate">Doctorate</option>
+                <option value="Finished High School">High School Diploma or GED</option>
+                <option value="college dropout">Some College, but no Degree</option>
+                <option value="associates Degree">Associates Degree</option>
+                <option value="bachelor Degree">Bachelor's Degree</option>
+                <option value="masters Degree">Masters Degree</option>
+                <option value="professional Degree">Professional Degree</option>
+                <option value="doctorate Degree">Doctorate</option>
               </select>
             </div>
 
@@ -240,7 +240,7 @@
       <dialog class="modal">
         <h2>Are you sure you want to submit?</h2>
         <p>Make sure all of your information is correct.</p>
-        <div id="submit-hell-please-kill-me">
+        <div id="submit">
         <button
           type="button"
           id="confirm-submit"
@@ -251,6 +251,14 @@
         </button>
       </div>
         <button type="button" id="reject-submit" class="close-modal">No</button>
+      </dialog>
+      <dialog class="modal" id="accepted-dialog">
+        <p>Accepted</p>
+        <button type="button" class="close-modal" id="close-dialog"  onclick="closeDialog2()">Close</button>
+      </dialog>
+      <dialog class="modal" id="reject-dialog">
+        <p>Denied</p>
+        <button type="button" class="close-modal" id="close-dialog2"  onclick="closeDialog3()">Close</button>
       </dialog>
 
       <div id="application-done" class="application-done">
