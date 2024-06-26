@@ -424,24 +424,20 @@
 
   .details {
     padding-left: 12%;
-    margin-bottom: 3vh;
-  }
-
-  .input-box {
-    margin-bottom: 6vh;
+    margin-bottom: 2vh;
+    font-size: 1.2rem;
   }
 
   .input-box > select {
-    width: 80%;
-    margin-left: 9%;
-    height: 5vh;
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.1rem;
   }
 
   .input-box > textarea {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3vh;
+    font-size: 1.1rem;
   }
 
   .select-box {
@@ -450,14 +446,14 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.2rem;
   }
 
   .input-box > input {
     width: 80%;
-    height: 5vh;
     margin-bottom: 3vh;
+    font-size: 1.1rem;
   }
-
   .application-done {
     width: 80%;
   }
@@ -485,8 +481,8 @@
   }
 
   .application-fyi {
-    font-size: 2.3vh;
-    line-height: 4.1vh;
+    font-size: 2vh;
+    line-height: 3.1vh;
     margin-bottom: 5vh;
   }
 
@@ -519,6 +515,36 @@
     margin-top: 12vh;
     margin-bottom: 3vh;
   }
+  
+  #name {
+   display: inline-flex;
+  }
+
+  #birthday-input {
+    width: 37%;
+    margin-right: 53%;
+  }
+
+  #phoneNumber-input {
+    width: 39%;
+    margin-right: 50%;
+  }
+
+  #socialSecurity-input {
+    width: 34%;
+    margin-right: 55%;
+  }
+
+  #experience-select {
+    width: 35%;
+    margin-left: 31%;
+  }
+
+  #education-select {
+    width: 82%;
+    margin-left: 9%;
+  }
+  
 
   /* ***************************End of application page****************************** */
 }
@@ -940,24 +966,20 @@
 
   .details {
     padding-left: 12%;
-    margin-bottom: 3vh;
-  }
-
-  .input-box {
-    margin-bottom: 6vh;
+    margin-bottom: 2vh;
+    font-size: 1.3rem;
   }
 
   .input-box > select {
-    width: 80%;
-    margin-left: 9%;
-    height: 5vh;
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.2rem;
   }
 
   .input-box > textarea {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .select-box {
@@ -966,12 +988,13 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.3rem;
   }
 
   .input-box > input {
     width: 80%;
-    height: 5vh;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .application-done {
@@ -1034,6 +1057,34 @@
   .submitted-info > h2 {
     margin-top: 12vh;
     margin-bottom: 3vh;
+  }
+
+  #name {
+    display: inline-flex;
+    
+  }
+
+  #birthday-input {
+    width: 23%;
+    margin-right: 66%;
+  }
+
+  #phoneNumber-input {
+    width: 24%;
+    margin-right: 64%;
+  }
+
+  #socialSecurity-input {
+    width: 21%;
+    margin-right: 67%;
+  }
+
+  #experience-select {
+    width: 21%;
+  }
+
+  #education-select {
+    width: 50%;
   }
 
   /* ***************************End of application page****************************** */
@@ -1424,7 +1475,7 @@
 
   /* *******************************Start of Application page************************* */
   .form {
-    width: 40%;
+    width: 80%;
   }
 
   .info {
@@ -1526,41 +1577,31 @@
     margin-bottom: 3vh;
   }
 
-  #firstName {
-    margin-right: 50%;
-    margin-left: 6%;  
-  }
-  
-  #lastName {
-    margin-left: 67%;
-    margin-top: -15.1%;
-    margin-left: 50%;
-    margin-right: 6%;
+  #name {
+    display: inline-flex;
   }
 
-  #birthday-input {
-    width: 24%;
-    margin-bottom: 5%;
-    margin-top: -7%;
-    margin-right: 45%;
+ #birthday-input {
+    width: 14%;
+    margin-right: 75%;
   }
 
   #phoneNumber-input {
-    width: 25%;
-    margin-right: 64%;
+    width: 15%;
+    margin-right: 74%;
   }
 
   #socialSecurity-input {
-    width: 22%;
-    margin-right: 68%;
+    width: 13%;
+    margin-right: 76%;
   }
 
   #experience-select {
-    width: 22%;
+    width: 13%;
   }
 
   #education-select {
-    width: 52%;
+    width: 30%;
   }
   /* ***************************End of application page****************************** */
 }
