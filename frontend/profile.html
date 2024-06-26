@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="icon" href="./assets/nova.png">
+    <link rel="stylesheet" href="fbla.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="profile-page-wrapper">
+        <nav>
+            <img src="./assets/menu.png" alt="menu" id="menu">
+            <a href="index.html" id="company-name">NovaTech Solutions</a>
+            <a href="index.html" class="nav-option">Home</a>
+            <a href="job-list.html" class="nav-option">Jobs</a>
+            <a href="about.html" class="nav-option">About Us</a>
+            <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+        </nav>
+
+        <div id="menu-content">
+            <h1>Pages:</h1>
+            <a href="index.html" class="nav-option">Home</a>
+            <a href="job-list.html" class="nav-option">Jobs</a>
+            <a href="about.html" class="nav-option">About Us</a>
+            <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+        </div>
+
+        <div id="page-wrapper">
+            <h1 id="profile-header">Account</h1>
+            <div id="profile-container">
+                <!-- <h1>NovaTech Solutions</h1> -->
+                <div id="account-info">
+                    <img id="profile-picture" src="./assets/profile-icon.png" alt="profile icon">
+                    <h1 id="profile-username"></h2>
+                </div>
+                    <h1>Applications:</h1>
+                    <div id="jobs-applied-for">
+                        <p id="no-applications">You have not applied for any jobs yet.
+                            <br>
+                            <a href="job-list.html">Apply today!</a>
+                        </p>
+                    </div>
+                    <button type="button" id="log-out" onclick="logOut()">Log Out</button>
+                </div>
+            </div>
+            
+            <!-- <div id="profile-picture-window">
+                <h1>Change Profile Picture:</h1>
+                <img id="profile-picture-display" src="./assets/profile-icon.png" alt="">
+                <input type="file" id="profile-picture-input" accept="image/*">
+                <button onclick="saveProfilePicture()" type="button" id="save-profile-picture">Save</button>  <button id="exit-profile-window" type="button" onclick="exitProfileWindow()">Back</button>
+            </div> -->
+        </div>
+
+        <dialog class="modal">
+            <h2>Are you sure you want to log out?</h2>
+            <button id="confirm-log-out" onclick="confirmLogOut()">Yes</button>
+            <button type="button" class="close-modal">No</button>
+        </dialog>
+    
+
+    <script src="fbla.js"></script>
+   
+    
+</body>
+</html>

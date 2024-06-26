@@ -1,0 +1,2268 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=IBM+Plex+Mono&family=Ubuntu&display=swap");
+
+/* 070436
+7A9AE4
+11EED8 */
+
+@media (min-width: 0px) and (max-width: 768px) {
+  /* body {
+    background-color: red;
+  } */
+
+  /* ****************************** Nav Bar **************************** */
+
+  nav {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+    background-color: #070436;
+  }
+  nav > a {
+    text-decoration: none;
+    border-radius: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    width: 15%;
+    display: inline-block;
+    margin: 0 2%;
+    display: none;
+  }
+  #company-name {
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    font-size: 5vw;
+    padding-right: 10vw;
+  }
+
+  #menu {
+    height: 9vh;
+    width: 9vh;
+    padding-top: 3%;
+    padding-left: 5%;
+    float: left;
+    display: block;
+    z-index: 3;
+  }
+  #menu-content {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    color: #070436;
+    padding: 5%;
+    font-size: 3vw;
+  }
+  #menu-content > h1 {
+    margin-bottom: 10vh;
+  }
+  #menu-content > a {
+    display: block;
+    margin-bottom: 6vh;
+    text-decoration: none;
+    padding: 1vh;
+    font-size: 5vw;
+    border-radius: 4vw;
+  }
+  .nav-option:hover {
+    animation: hoverAnimationSmall 0.5s linear forwards;
+  }
+  #menu-content > a > img {
+    width: 25%;
+    background-color: #070436;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  @keyframes hoverAnimationSmall {
+    0% {
+      outline: 0.5vw solid #070436;
+    }
+    100% {
+      outline: 0.5vw solid #7a9ae4;
+    }
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
+    height: 30vh;
+    display: block;
+  }
+
+  #header-info {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    text-align: center;
+  }
+
+  #header-info > h1 {
+    font-size: 5vw;
+    animation: fadeDown 1s ease forwards;
+  }
+
+  #header-info > p {
+    opacity: 0;
+    font-size: 3vw;
+    animation: fadeRight 1s 1s ease forwards;
+  }
+  #header-img {
+    display: none;
+  }
+  #open-job-list {
+    width: 10vw;
+    height: 10vh;
+    padding: 2vh;
+    font-size: 4vw;
+    margin-top: 10vh;
+    line-height: 8vh;
+  }
+
+  .home-section {
+    /* height: 60vh; */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    padding: 1.1vw;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+
+  .home-column > h2 {
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 1vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  #contact-info {
+    padding: 2vw;
+    font-size: 3vw;
+  }
+
+  .contact-column {
+    padding-left: 5vw;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3vh;
+  }
+
+  .account-label {
+    margin-bottom: 2vh;
+  }
+
+  .account-input {
+    height: 7vh;
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 80%;
+  }
+
+  .account-submit {
+    font-size: 4vh;
+    padding: 1.5vh;
+    width: 80%;
+  }
+
+  .account-submit > a {
+    font-size: 4vh;
+  }
+
+  .account-page-switch {
+    margin-top: 4vh;
+    font-size: 4vh;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3.5vw;
+  }
+
+  #pass-requirements {
+    width: 100%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 3vw;
+  }
+
+  #pass-requirements > p {
+    font-size: 3vw;
+    padding-left: 30%;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 75vw;
+    margin-top: 7vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 4vh;
+  }
+
+  #account-info > img {
+    width: 20vh;
+  }
+
+  .profile-job-container {
+    width: 70%;
+    font-size: 2vh;
+    padding: 2vh;
+    margin-top: 5vh;
+  }
+
+  .profile-column {
+    text-align: center;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 4vh;
+    margin-top: 5vh;
+    padding: 3vh;
+  }
+
+  #confirm-log-out {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: block;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin-top: 20vh;
+    margin-bottom: 8vh;
+  }
+
+  .job-container {
+    display: none;
+  }
+
+  #job-list-column-2 {
+    display: none;
+  }
+
+  .modal {
+    width: 70vw;
+    padding: 2vh;
+    font-size: 2.75vh;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: block;
+    padding: 3vh;
+    border: 0.5vh solid white;
+    border-radius: 3vh;
+    margin-bottom: 8vh;
+    transition: border 0.5s solid;
+  }
+
+  .job-container-mobile:hover {
+    border: 0.5vh solid #7a9ae4;
+    transition: border 0.5s;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 33vh;
+    margin-top: 3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 4vh;
+    padding-top: 10vh;
+  }
+
+  #about-banner > img {
+    /* margin-top: 3vh; */
+    width: 12vh;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 10vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 2vh;
+    line-height: 4vh;
+  }
+
+  .image {
+    height: 30vh;
+  }
+
+  #finishing-statement {
+    width: 80%;
+    line-height: 4vh;
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding: 2vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 80%;
+    margin-top: 20vh;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 2vh;
+    font-size: 1.2rem;
+  }
+
+  .input-box > select {
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.1rem;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.1rem;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+    font-size: 1.2rem;
+  }
+
+  .input-box > input {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.1rem;
+  }
+  .application-done {
+    width: 80%;
+  }
+
+  .application-done > h1 {
+    font-size: 4vh;
+  }
+
+  .application-done > h2 {
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+
+  .application-done > img {
+    width: 40%;
+    margin-top: 8vh;
+  }
+
+  .application-done > p {
+    font-size: 3.5vh;
+  }
+
+  .application-done > a {
+    font-size: 3.5vh;
+  }
+
+  .application-fyi {
+    font-size: 2vh;
+    line-height: 3.1vh;
+    margin-bottom: 5vh;
+  }
+
+  .submit {
+    padding: 1.5vh;
+    font-size: 3vh;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 80%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+  }
+  
+  #name {
+   display: inline-flex;
+  }
+
+  #birthday-input {
+    width: 37%;
+    margin-right: 53%;
+  }
+
+  #phoneNumber-input {
+    width: 39%;
+    margin-right: 50%;
+  }
+
+  #socialSecurity-input {
+    width: 34%;
+    margin-right: 55%;
+  }
+
+  #experience-select {
+    width: 35%;
+    margin-left: 31%;
+  }
+
+  #education-select {
+    width: 82%;
+    margin-left: 9%;
+  }
+  
+
+  /* ***************************End of application page****************************** */
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  /* body {
+    background-color: green;
+  } */
+
+  /* ****************************** Nav Bar **************************** */
+
+  nav {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+    background-color: #070436;
+  }
+  nav > a {
+    text-decoration: none;
+    border-radius: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    width: 15%;
+    display: inline-block;
+    margin: 0 2%;
+    display: none;
+  }
+  #company-name {
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    font-size: 5vw;
+    padding-right: 10vw;
+  }
+
+  #menu {
+    height: 9vh;
+    width: 9vh;
+    padding-top: 3%;
+    padding-left: 5%;
+    float: left;
+    display: block;
+    z-index: 3;
+  }
+  #menu-content {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    color: #070436;
+    padding: 5%;
+    font-size: 3vh;
+  }
+  #menu-content > h1 {
+    margin-bottom: 10vh;
+  }
+  #menu-content > a {
+    display: block;
+    margin-bottom: 6vh;
+    text-decoration: none;
+    padding: 1vh;
+    font-size: 5vh;
+    border-radius: 4vw;
+  }
+  .nav-option:hover {
+    animation: hoverAnimationSmall 0.5s linear forwards;
+  }
+  #menu-content > a > img {
+    width: 25%;
+    background-color: #070436;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  @keyframes hoverAnimationSmall {
+    0% {
+      outline: 0.5vw solid #070436;
+    }
+    100% {
+      outline: 0.5vw solid #7a9ae4;
+    }
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
+    height: 50vh;
+    display: block;
+  }
+
+  #header-info {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    text-align: center;
+  }
+
+  #header-info > h1 {
+    font-size: 7vh;
+    animation: fadeDown 1s ease forwards;
+  }
+
+  #header-info > p {
+    opacity: 0;
+    font-size: 5vh;
+    animation: fadeRight 1s 1s ease forwards;
+    margin-bottom: 5vh;
+  }
+  #header-img {
+    display: none;
+  }
+  #open-job-list {
+    padding: 2vh;
+    font-size: 4vh;
+    margin-top: 10vh;
+  }
+
+  .home-section {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    padding: 1.1vw;
+    font-size: 3vh;
+    line-height: 4vw;
+  }
+
+  .home-column > h2 {
+    font-size: 5vh;
+    line-height: 6vh;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 1vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vh;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vh;
+  }
+
+  #contact-info {
+    padding: 2vw;
+    font-size: 2.3vh;
+  }
+
+  .contact-column {
+    padding-left: 5vh;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3vh;
+  }
+
+  .account-label {
+    margin-bottom: 2vh;
+  }
+
+  .account-input {
+    height: 7vh;
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 80%;
+  }
+
+  .account-submit {
+    font-size: 4vh;
+    padding: 1.5vh;
+    width: 80%;
+  }
+
+  .account-submit > a {
+    font-size: 4vh;
+  }
+
+  .account-page-switch {
+    margin-top: 4vh;
+    font-size: 4vh;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3.5vw;
+  }
+
+  #pass-requirements {
+    width: 100%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 3vw;
+  }
+
+  #pass-requirements > p {
+    font-size: 3vw;
+    padding-left: 30%;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 75vw;
+    margin-top: 7vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 4vh;
+  }
+
+  #account-info > img {
+    width: 20vh;
+  }
+
+  .profile-job-container {
+    width: 70%;
+    font-size: 2vh;
+    padding: 2vh;
+    margin-top: 5vh;
+  }
+
+  .profile-column {
+    text-align: center;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 4vh;
+    margin-top: 5vh;
+    padding: 3vh;
+  }
+
+  #confirm-log-out {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: block;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin-top: 20vh;
+    margin-bottom: 8vh;
+  }
+
+  .job-container {
+    display: none;
+  }
+
+  #job-list-column-2 {
+    display: none;
+  }
+
+  .modal {
+    width: 70vw;
+    padding: 2vh;
+    font-size: 2.75vh;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: block;
+    padding: 3vh;
+    border: 0.5vh solid white;
+    border-radius: 3vh;
+    margin-bottom: 8vh;
+    transition: border 0.5s solid;
+  }
+
+  .job-container-mobile:hover {
+    border: 0.5vh solid #7a9ae4;
+    transition: border 0.5s;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 33vh;
+    margin-top: 3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 4vh;
+    padding-top: 10vh;
+  }
+
+  #about-banner > img {
+    /* margin-top: 3vh; */
+    width: 12vh;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 10vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 2vh;
+    line-height: 4vh;
+  }
+
+  .image {
+    height: 30vh;
+  }
+
+  #finishing-statement {
+    width: 80%;
+    line-height: 4vh;
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding: 2vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 80%;
+    margin-top: 20vh;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 2vh;
+    font-size: 1.3rem;
+  }
+
+  .input-box > select {
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.2rem;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.2rem;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+    font-size: 1.3rem;
+  }
+
+  .input-box > input {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.2rem;
+  }
+
+  .application-done {
+    width: 80%;
+  }
+
+  .application-done > h1 {
+    font-size: 4vh;
+  }
+
+  .application-done > h2 {
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+
+  .application-done > img {
+    width: 40%;
+    margin-top: 8vh;
+  }
+
+  .application-done > p {
+    font-size: 3.5vh;
+  }
+
+  .application-done > a {
+    font-size: 3.5vh;
+  }
+
+  .application-fyi {
+    font-size: 2.3vh;
+    line-height: 4.1vh;
+    margin-bottom: 5vh;
+  }
+
+  .submit {
+    padding: 1.5vh;
+    font-size: 3vh;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 80%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+  }
+
+  #name {
+    display: inline-flex;
+    
+  }
+
+  #birthday-input {
+    width: 23%;
+    margin-right: 66%;
+  }
+
+  #phoneNumber-input {
+    width: 24%;
+    margin-right: 64%;
+  }
+
+  #socialSecurity-input {
+    width: 21%;
+    margin-right: 67%;
+  }
+
+  #experience-select {
+    width: 21%;
+  }
+
+  #education-select {
+    width: 50%;
+  }
+
+  /* ***************************End of application page****************************** */
+}
+
+@media (min-width: 1280px) {
+  /* body {
+    background: #070436;
+  } */
+
+  /* ******************************* Navbar ************************************ */
+
+  #company-name {
+    width: 20%;
+  }
+  #menu {
+    display: none;
+  }
+  nav > a {
+    text-decoration: none;
+    border-radius: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    width: 15%;
+    display: inline-block;
+    margin: 0 2%;
+  }
+  .nav-option:hover {
+    animation: hoverAnimation 0.5s linear forwards;
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #header-info {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    text-align: left;
+  }
+
+  #header-info > h1 {
+    font-size: 3vw;
+    animation: fadeDown 1s ease forwards;
+  }
+
+  #header-info > p {
+    opacity: 0;
+    font-size: 1.5vw;
+    margin-top: -2vh;
+    margin-bottom: 4vh;
+    animation: fadeRight 1s 1s ease forwards;
+  }
+  #open-job-list {
+    width: 10vw;
+    height: 10vh;
+    padding: 1vh;
+    font-size: 1.8vw;
+    line-height: 8vh;
+    margin-left: -0.1vw;
+  }
+
+  .home-section {
+    height: 60vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    font-size: 2vw;
+    line-height: 7vh;
+  }
+
+  .home-column > h2 {
+    padding-top: 4vh;
+    font-size: 3vw;
+    line-height: 8vh;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 4vh;
+    padding: 0.75vw;
+    border-radius: 1.5vw;
+    width: 30%;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 0.75vw;
+    border-radius: 1.5vw;
+    width: 60%;
+  }
+
+  #home-login-link {
+    margin-top: -2vh;
+  }
+
+  #contact-info {
+    padding: 2vw;
+  }
+
+  .contact-column {
+    padding-left: 5vw;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 1vw;
+    width: 40vw;
+    font-size: 1.3vw;
+  }
+
+  .account-label {
+    margin-bottom: 1vh;
+  }
+
+  .account-input {
+    height: 5vh;
+    font-size: 1vw;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 50%;
+  }
+
+  .account-submit {
+    font-size: 1.2vw;
+    padding: 1vh;
+    width: 50%;
+  }
+
+  .account-submit > a {
+    font-size: 1.2vw;
+  }
+
+  .account-page-switch {
+    margin-top: 2vh;
+    font-size: 1.2vw;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up-header > p {
+    font-size: 1.1vw;
+  }
+
+  #sign-up {
+    padding: 1vw;
+    width: 40vw;
+    font-size: 1.3vw;
+  }
+
+  #pass-requirements {
+    margin-top: -3vh;
+    width: 40%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 1.3vw;
+    margin-bottom: -1vh;
+  }
+
+  #pass-requirements > p {
+    font-size: 1.1vw;
+    padding-left: 1vw;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 60vw;
+    margin-top: 5vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 7vh;
+  }
+  #account-info > img {
+    width: 10vw;
+  }
+
+  .profile-job-container {
+    width: 50%;
+    font-size: 1.2vw;
+    padding: 1.4vw;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 1.3vw;
+    margin-top: 5vh;
+    padding: 2vh;
+  }
+
+  #confirm-log-out {
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin: 2vw;
+  }
+
+  #job-info {
+    width: 100%;
+    overflow-y: scroll;
+    border-top: 0.3vw solid white;
+    height: 55.5vh;
+  }
+
+  .job-container {
+    padding: 3vw;
+    border: 0.3vw solid white;
+    border-radius: 3vw;
+    margin-bottom: 10vh;
+  }
+
+  .job-apply {
+    padding: 2vw;
+    height: 24vh;
+  }
+
+  .apply {
+    background-color: #11eed8;
+    color: #070436;
+    font-family: "Ubuntu", sans-serif;
+    padding: 0.9vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    border: none;
+    margin-top: -2vh;
+    margin-left: 30vw;
+  }
+
+  .apply:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #job-list-column-2 {
+    border: 0.3vw solid white;
+    border-radius: 2vw;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 87vh;
+  }
+
+  .job-container-info {
+    padding: 2vw;
+  }
+
+  .job-container-info > p {
+    margin-bottom: 5vh;
+  }
+
+  .modal {
+    width: 35vw;
+    padding: 2vh;
+    font-size: 1.6vw;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: none;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 50vh;
+    margin-top: -3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 3vw;
+    padding: 10vh;
+  }
+
+  #about-banner > img {
+    margin-top: -13vh;
+    width: 10vw;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 15vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 1.1vw;
+    line-height: 3vh;
+  }
+
+  .image {
+    height: 80%;
+  }
+
+  #finishing-statement {
+    width: 60%;
+    line-height: 4vh;
+    font-size: 1.1vw;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 80%;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 2vh;
+    font-size: 1.3rem;
+  }
+
+  .input-box > select {
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.2rem;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.2rem;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+    font-size: 1.3rem;
+  }
+
+  .input-box > input {
+    width: 80%;
+    margin-bottom: 3vh;
+    font-size: 1.2rem;
+  }
+
+  .application-done {
+    width: 60%;
+  }
+
+  .application-done > h1 {
+    font-size: 3vw;
+  }
+
+  .application-done > h2 {
+    font-size: 2vw;
+  }
+
+  .application-done > img {
+    width: 20%;
+    margin-top: 8vh;
+  }
+
+  .application-done > a {
+    font-size: 2vw;
+  }
+
+  #application-name {
+    text-align: center;
+  }
+
+  .application-fyi {
+    font-size: 1.4vw;
+    line-height: 4vh;
+  }
+
+  .submit {
+    padding: 0.8vw;
+    margin-top: 1vh;
+    font-size: 1.5vw;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 30%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-bottom: 3vh;
+  }
+
+  #name {
+    display: inline-flex;
+  }
+
+ #birthday-input {
+    width: 14%;
+    margin-right: 75%;
+  }
+
+  #phoneNumber-input {
+    width: 15%;
+    margin-right: 74%;
+  }
+
+  #socialSecurity-input {
+    width: 13%;
+    margin-right: 76%;
+  }
+
+  #experience-select {
+    width: 13%;
+  }
+
+  #education-select {
+    width: 30%;
+  }
+  /* ***************************End of application page****************************** */
+}
+
+body,
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#company-name {
+  height: 5vh;
+  color: #11eed8;
+  background-image: url(./assets/nova.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center right;
+  line-height: 5vh;
+}
+
+#account-tab-icon {
+  width: 25%;
+  padding-top: 1vh;
+}
+
+#menu-content {
+  display: none;
+}
+
+nav > img {
+  width: 10%;
+  display: none;
+}
+
+@keyframes hoverAnimation {
+  0% {
+    outline: 0.2vw solid #070436;
+  }
+  100% {
+    outline: 0.2vw solid #7a9ae4;
+  }
+}
+
+/* ***************************home page (index.html)*************************** */
+
+#header-img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+#header-img > img {
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.showing {
+  opacity: 1;
+  z-index: -1;
+  transition: none;
+}
+
+#open-job-list {
+  opacity: 0;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  color: #070436;
+  background-color: #11eed8;
+  border: 0.5vw solid #11eed8;
+  border-radius: 1vw;
+  animation: fade 1s 2s ease forwards;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#open-job-list:hover {
+  background-color: #070436;
+  color: #11eed8;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.home-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home-section-2 {
+  background-color: lightgrey;
+  color: #070436;
+}
+
+.home-column {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 100%;
+}
+
+.home-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-button-1 {
+  display: block;
+  text-decoration: none;
+  color: #11eed8;
+  background-color: #070436;
+  border-radius: 1.5vw;
+  text-align: center;
+}
+
+.home-button-1:hover {
+  text-decoration: underline;
+}
+
+.home-button-2 {
+  display: block;
+  text-decoration: none;
+  color: #070436;
+  background-color: #11eed8;
+  border-radius: 1.5vw;
+  text-align: center;
+}
+
+.home-button-2:hover {
+  text-decoration: underline;
+}
+
+#contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/* ***************************End of Home Page*************************** */
+
+/* ***************************Start of Log In*************************** */
+#log-in-header {
+  text-align: center;
+}
+
+#log-in-header > h1 {
+  animation: fadeDown 2s ease forwards;
+}
+
+#log-in {
+  color: #070436;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: lightgray;
+}
+
+.account-input {
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.input-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.account-submit {
+  border: none;
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 1vw;
+}
+
+.account-submit > a {
+  text-decoration: none;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.account-submit:hover {
+  background-color: #7a9ae4;
+  cursor: pointer;
+}
+
+.account-page-switch {
+  border: none;
+  background-color: lightgrey;
+  color: #070436;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 1vw;
+}
+
+.account-page-switch:hover {
+  color: #7a9ae4;
+  cursor: pointer;
+}
+
+#sign-up-header {
+  text-align: center;
+}
+
+#sign-up {
+  display: none;
+  color: #070436;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: lightgray;
+}
+
+#pass-requirements {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+#pass-requirements > p {
+  text-align: left;
+}
+/* ***************************End of Login*************************** */
+
+/* ***************************Start of profile page*************************** */
+
+#profile-page-wrapper {
+  text-align: center;
+}
+
+#profile-page-wrapper > h1 {
+  color: #11eed8;
+}
+
+#profile-header {
+  animation: fadeDown 2s ease forwards;
+}
+
+#profile-container {
+  background-color: #7a9ae4;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#no-applications {
+  display: none;
+}
+
+.profile-job-container {
+  background-color: white;
+  color: #070436;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#log-out {
+  border: none;
+  color: #070436;
+  font-family: "Ubuntu", sans-serif;
+  background-color: lightgray;
+  border-radius: 1vw;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#log-out:hover {
+  transition: color 0.5s, background-color 0.5s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+#confirm-log-out {
+  background-color: white;
+  border: 0.5vh solid #070436;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#profile-picture {
+  border-radius: 50%;
+}
+
+/* #profile-picture:hover {
+    background-color: #070436;
+}
+
+#profile-picture-window {
+    background-color: white;
+    width: 30vw;
+    color: #070436;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    padding: 1vh;
+    text-align: center;
+    position: fixed;
+}
+
+#profile-picture-display {
+    background-color: #070436;
+    border-radius: 50%;
+    width: 75%;
+}
+
+#profile-picture-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    font-size: 1vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#exit-profile-window {
+    background-color: #070436;
+    color: white;
+    border: .5vh solid #070436;
+    font-family: 'Ubuntu', sans-serif;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+}
+
+#exit-profile-window:hover {
+    text-decoration: underline;
+}
+
+#save-profile-picture {
+    background-color: white;
+    border: .5vh solid #070436;
+    font-family: 'Ubuntu', sans-serif;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+}
+
+#save-profile-picture:hover {
+    text-decoration: underline;
+} */
+
+/* ***************************End of Profile*************************** */
+
+/* *******************************Start of Job Page************************ */
+
+.job-list-column {
+  margin-left: auto;
+  margin-right: auto;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+#job-list-title {
+  animation: fadeDown 2s ease forwards;
+  text-align: center;
+}
+
+.modal {
+  background-color: white;
+  color: #070436;
+  text-align: center;
+  border-radius: 1rem;
+  /* transition: text-decoration 5s; */
+}
+
+.modal > button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  /* transition: text-decoration 5s; */
+}
+
+#go-to-log-in {
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.close-modal {
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* ***********************************End of job page******************************************** */
+
+/* ***************************About us page start*************************** */
+#about-banner {
+  text-align: center;
+  width: 100%;
+  background-image: url(./assets/coders-meeting.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#about-banner > h1 {
+  text-align: center;
+  text-shadow: 0.3vw 0.3vw 0.4vw #000000;
+  animation: fadeDown 2s ease forwards;
+}
+
+#about-banner > img {
+  opacity: 0;
+  animation: fade 2s 2s ease forwards;
+}
+
+#about-us-wrapper {
+  text-align: center;
+}
+
+/* .section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 5vh;
+} */
+
+.column {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column > h2 {
+  text-decoration: underline;
+}
+
+.image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#finishing-statement {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#finishing-statement > a {
+  color: #11eed8;
+}
+
+footer {
+  text-align: center;
+  color: #070436;
+  background-color: lightgrey;
+}
+
+.about-img-1 {
+  background-image: url(./assets/nova.png);
+}
+
+.about-img-2 {
+  background-image: url(./assets/comp-hardware-specialist.jpeg);
+}
+
+.about-img-3 {
+  background-image: url(./assets/west-mec-logo.png);
+}
+
+.about-img-4 {
+  background-image: url(./assets/computer-internals.jpeg);
+}
+
+.about-img-5 {
+  background-image: url(./assets/counseling.jpg);
+}
+
+.about-img-6 {
+  background-image: url(./assets/diversity.jpeg);
+}
+/* ***************************End of About us*************************** */
+
+/* *******************************Start of Application page************************* */
+.form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info {
+  text-align: center;
+  background-color: lightgray;
+  color: #070436;
+}
+
+.details {
+  display: block;
+  text-align: left;
+}
+
+.input-box > select {
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.input-box > textarea {
+  font-family: "Ubuntu", sans-serif;
+  resize: vertical;
+}
+
+.select-details {
+  display: inline-block;
+}
+
+.input-box > input {
+  font-family: "Ubuntu", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.application-done {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.application-done > p {
+  color: #11eed8;
+}
+
+.application-done > a {
+  color: #11eed8;
+  display: block;
+}
+
+#application-name {
+  text-align: center;
+  color: #11eed8;
+}
+
+.application-fyi {
+  text-align: center;
+}
+
+.submit {
+  background-color: #070436;
+  border: none;
+  border-radius: 1vw;
+  color: #11eed8;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.submit:hover {
+  text-decoration: underline;
+}
+
+.confirm-button {
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+.submitted-info {
+  display: none;
+  color: #070436;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submitted-info > h1 {
+  text-align: center;
+  color: #11eed8;
+}
+
+.submitted-info > div {
+  background-color: lightgray;
+}
+
+.submitted-info > h2 {
+  text-align: center;
+  color: white;
+}
+
+.optional-input {
+  display: none;
+}
+/* ***************************End of application page****************************** */
+
+.job-container:hover {
+  text-decoration: underline;
+}
+
+.close-modal:hover {
+  text-decoration: underline;
+}
+
+.close-modal:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.home-img-1 {
+  background-image: url(./assets/coder-on-phone.jpeg);
+}
+
+.home-img-2 {
+  background-image: url(./assets/coders-talking.jpg);
+}
+
+.home-img-3 {
+  background-image: url(./assets/coder-thinking.jpg);
+}
