@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-// import { Hono } from '/backend/node_modules/hono/dist/hono.js';
-//global element
-=======
 
-
->>>>>>> 788d346abad268ef9d70990d04c6c03494c87c8e
 const pageWrapper = document.getElementById("page-wrapper");
 
 //nav elements
