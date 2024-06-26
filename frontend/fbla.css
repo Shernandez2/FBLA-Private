@@ -109,13 +109,13 @@
 
   #header-info > h1 {
     font-size: 5vw;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
     opacity: 0;
     font-size: 3vw;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
   }
   #header-img {
     display: none;
@@ -424,24 +424,20 @@
 
   .details {
     padding-left: 12%;
-    margin-bottom: 3vh;
-  }
-
-  .input-box {
-    margin-bottom: 6vh;
+    margin-bottom: 2vh;
+    font-size: 1.2rem;
   }
 
   .input-box > select {
-    width: 80%;
-    margin-left: 9%;
-    height: 5vh;
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.1rem;
   }
 
   .input-box > textarea {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3vh;
+    font-size: 1.1rem;
   }
 
   .select-box {
@@ -450,14 +446,14 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.2rem;
   }
 
   .input-box > input {
     width: 80%;
-    height: 5vh;
     margin-bottom: 3vh;
+    font-size: 1.1rem;
   }
-
   .application-done {
     width: 80%;
   }
@@ -485,8 +481,8 @@
   }
 
   .application-fyi {
-    font-size: 2.3vh;
-    line-height: 4.1vh;
+    font-size: 2vh;
+    line-height: 3.1vh;
     margin-bottom: 5vh;
   }
 
@@ -519,6 +515,36 @@
     margin-top: 12vh;
     margin-bottom: 3vh;
   }
+  
+  #name {
+   display: inline-flex;
+  }
+
+  #birthday-input {
+    width: 37%;
+    margin-right: 53%;
+  }
+
+  #phoneNumber-input {
+    width: 39%;
+    margin-right: 50%;
+  }
+
+  #socialSecurity-input {
+    width: 34%;
+    margin-right: 55%;
+  }
+
+  #experience-select {
+    width: 35%;
+    margin-left: 31%;
+  }
+
+  #education-select {
+    width: 82%;
+    margin-left: 9%;
+  }
+  
 
   /* ***************************End of application page****************************** */
 }
@@ -628,13 +654,13 @@
 
   #header-info > h1 {
     font-size: 7vh;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
     opacity: 0;
     font-size: 5vh;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
     margin-bottom: 5vh;
   }
   #header-img {
@@ -940,24 +966,20 @@
 
   .details {
     padding-left: 12%;
-    margin-bottom: 3vh;
-  }
-
-  .input-box {
-    margin-bottom: 6vh;
+    margin-bottom: 2vh;
+    font-size: 1.3rem;
   }
 
   .input-box > select {
-    width: 80%;
-    margin-left: 9%;
-    height: 5vh;
+    margin-bottom: 3vh;
+    width: 40%;
+    font-size: 1.2rem;
   }
 
   .input-box > textarea {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .select-box {
@@ -966,12 +988,13 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.3rem;
   }
 
   .input-box > input {
     width: 80%;
-    height: 5vh;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .application-done {
@@ -1036,6 +1059,34 @@
     margin-bottom: 3vh;
   }
 
+  #name {
+    display: inline-flex;
+    
+  }
+
+  #birthday-input {
+    width: 23%;
+    margin-right: 66%;
+  }
+
+  #phoneNumber-input {
+    width: 24%;
+    margin-right: 64%;
+  }
+
+  #socialSecurity-input {
+    width: 21%;
+    margin-right: 67%;
+  }
+
+  #experience-select {
+    width: 21%;
+  }
+
+  #education-select {
+    width: 50%;
+  }
+
   /* ***************************End of application page****************************** */
 }
 
@@ -1084,7 +1135,7 @@
 
   #header-info > h1 {
     font-size: 3vw;
-    animation: fadeDown 2s ease forwards;
+    animation: fadeDown 1s ease forwards;
   }
 
   #header-info > p {
@@ -1092,7 +1143,7 @@
     font-size: 1.5vw;
     margin-top: -2vh;
     margin-bottom: 4vh;
-    animation: fadeRight 2s 2s ease forwards;
+    animation: fadeRight 1s 1s ease forwards;
   }
   #open-job-list {
     width: 10vw;
@@ -1303,22 +1354,24 @@
 
   .job-apply {
     padding: 2vw;
-    height: 34vh;
+    height: 24vh;
   }
 
   .apply {
     background-color: #11eed8;
     color: #070436;
     font-family: "Ubuntu", sans-serif;
-    padding: 0.5vw;
+    padding: 0.9vw;
     border-radius: 1vw;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     border: none;
-    margin-top: 2vh;
+    margin-top: -2vh;
+    margin-left: 30vw;
   }
 
   .apply:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 
   #job-list-column-2 {
@@ -1327,7 +1380,7 @@
     overflow: hidden;
     position: sticky;
     top: 0;
-    height: 98vh;
+    height: 87vh;
   }
 
   .job-container-info {
@@ -1422,7 +1475,7 @@
 
   /* *******************************Start of Application page************************* */
   .form {
-    width: 30%;
+    width: 80%;
   }
 
   .info {
@@ -1434,16 +1487,19 @@
   .details {
     padding-left: 12%;
     margin-bottom: 2vh;
+    font-size: 1.3rem;
   }
 
   .input-box > select {
     margin-bottom: 3vh;
-    width: 35%;
+    width: 40%;
+    font-size: 1.2rem;
   }
 
   .input-box > textarea {
     width: 80%;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .select-box {
@@ -1452,11 +1508,13 @@
 
   .select-details {
     margin-right: 1vw;
+    font-size: 1.3rem;
   }
 
   .input-box > input {
     width: 80%;
     margin-bottom: 3vh;
+    font-size: 1.2rem;
   }
 
   .application-done {
@@ -1485,7 +1543,7 @@
   }
 
   .application-fyi {
-    font-size: 1vw;
+    font-size: 1.4vw;
     line-height: 4vh;
   }
 
@@ -1519,6 +1577,32 @@
     margin-bottom: 3vh;
   }
 
+  #name {
+    display: inline-flex;
+  }
+
+ #birthday-input {
+    width: 14%;
+    margin-right: 75%;
+  }
+
+  #phoneNumber-input {
+    width: 15%;
+    margin-right: 74%;
+  }
+
+  #socialSecurity-input {
+    width: 13%;
+    margin-right: 76%;
+  }
+
+  #experience-select {
+    width: 13%;
+  }
+
+  #education-select {
+    width: 30%;
+  }
   /* ***************************End of application page****************************** */
 }
 
@@ -1613,7 +1697,7 @@ nav > img {
   background-color: #11eed8;
   border: 0.5vw solid #11eed8;
   border-radius: 1vw;
-  animation: fade 2s 4s ease forwards;
+  animation: fade 1s 2s ease forwards;
   transition: color 0.5s, background-color 0.5s;
 }
 
