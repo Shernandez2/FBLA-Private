@@ -211,7 +211,6 @@ const applicationWrapper = document.getElementById("application-wrapper");
 // const applicationName = document.querySelectorAll('.application-name');
 const applicationName = document.getElementById("application-name");
 const firstNameInput = document.getElementById("firstName-input");
-const middleNameInput = document.getElementById("middleName-input");
 const lastNameInput = document.getElementById("lastName-input");
 const birthdayInput = document.getElementById("birthday-input");
 const phoneNumberInput = document.getElementById("phoneNumber-input");
@@ -671,7 +670,6 @@ function confirmSubmit() {
   let jobApplicationInfo = {
     jobApplicationInfo: {
       firstName: firstNameInput.value,
-      middleName: middleNameInput.value,
       lastName: lastNameInput.value,
       birthday: birthdayInput.value,
       phoneNumber: phoneNumberInput.value,
@@ -792,8 +790,10 @@ query(payload).then((response) => {
   }else if (JSON.stringify(response).toString().toLowerCase().includes("(true, false)")) {
     const acceptedDialog = document.getElementById('accepted-dialog');
       acceptedDialog.showModal();
+  }else {
+    const acceptedDialog = document.getElementById('accepted-dialog');
+    acceptedDialog.showModal();
   }
-
 
     // alert(JSON.stringify(response).toString().toLowerCase().includes("(true)"));   
     
